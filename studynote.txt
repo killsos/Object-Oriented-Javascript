@@ -1,0 +1,75 @@
+object-oriented Javascript first Edition
+
+1. 数据类型
+string number boolean undefiend null object
+
+2. null与undefined区别
+null 是引用型的特殊类型 例如获取一个不存在DOM元素
+undefiend 是已定义未赋值的变量 会自动复制undefiend
+
+当进行某种算术运算的时候有如下体现：
+var i = 1 + undefiend;  // NaN
+
+var i = 1 + null       // 1
+
+undefiend 转出数字
+
+null      转出布尔值
+
+但是与字符串运算时候都会转出字符串的 “null” "undefiend"
+
+3. typeof string number boolean undefiend function object
+内置类型typeof都是object
+
+4 typeof null 返回值 object
+
+function  isNull(input){
+    return  (!input && (typeof input === 'object') ? true :  false) ;
+}
+
+5 false
+  空字符串 “”
+  null
+  undefiend
+  数字 0
+  数字 NaN
+  布尔值 false
+
+6 检查变量存在最好方法
+  type x === 'undefiend'
+
+7 函数
+  arguments 是类数组
+  [].silcie.call(arguments)
+  Array.from(arguments)
+
+8 isNaN()  number.is()
+
+9 parseInt() 第二个参数 radix
+
+10 encodeURI()
+   该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，
+   encodeURI() 函数是不会进行转义的：;/?:@&=+$,#
+   encodeURI假定它的参数是完整的URI
+
+   encodeURIComponent()
+   该方法不会对 ASCII 字母和数字进行编码，
+   也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ' ( ) 。
+   其他字符（比如 ：;/?:@&=+$,# 这些用于分隔 URI 组件的标点符号），
+   都是由一个或多个十六进制的转义序列替换的。
+   encodeURIComponent假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。
+   因此 encodeURIComponent() 函数将转义用于分隔 URI 各个部分的标点符号。
+
+11 函数也是数据
+   函数声明 函数表达式
+
+12 自执行匿名函数
+   (function(){ival1,ival2})(va1,va2)
+
+
+13 词法作用域
+   在javascript中,每一个函数都有自己的词法作用域，每一个函数在被定义时(而非执行时候)都会创建
+   一个属于的自己的环境（词法作用域）。
+   每一个函数只能访问自身作用域和父级作用域一直到全局作用域
+
+   两个函数之间不能对方的作用域如03.js
