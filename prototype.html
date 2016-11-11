@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <button type="button" name="button" id="addproto">add-prototype</button>
+    <script type="text/javascript">
+        function Dog() {
+            this.tail = true;
+        }
+
+        var benji = new Dog();
+        var rusty = new Dog();
+
+        /**
+         * 即便是对象创建之后，我们也依然能为原型添加属性，并且所有的相关对象都可以
+         * 随时访问这些新添加的属性
+         */
+
+        document.querySelector('#addproto').onclick = function() {
+            Dog.prototype.say = function() {
+                console.log("汪汪");
+            };
+            benji.say();
+            rusty.say();
+        }
+    </script>
+</body>
+
+</html>
