@@ -232,3 +232,83 @@ function  isNull(input){
    Attr             Node            coreDOM        属性
    nodeList                         coreDOM        节点列表  length
    NameNodeMap                      coreDOM        getElementbyTagName
+
+   document
+   属性:nodeType   nodeName   nodeValue
+   document.nodeType
+   9
+
+   DOM节点类型有12种
+   1  元素
+   2  属性
+   3  文本
+
+   html   document.documentElement
+   document.documentElement.nodeName
+   "HTML"
+
+   document.documentElement.tagName
+   "HTML"
+
+   是否有子节点
+   document.documentElement.hasChildNodes()
+
+   document.documentElement.childNodes.length
+
+   document.documentElement.childNodes.parentNode
+
+   .hasAttributes()
+
+   .attributes
+
+   .attributes.length
+
+   .textContent (IE不支持) IE 用 innerText
+
+   兄弟节点 body元素  首尾子节点
+
+   nextSibling
+   previousSibling
+
+   firstChild
+   lastChild
+
+   document.createElement()
+   document.createTextNode()
+
+   appendChild()
+
+   cloneNode() true 深拷贝  false 浅拷贝 只针对当前节点
+
+   insertBefore  appendChild
+
+   removeChild()
+
+   replaceChild()
+
+   document.body  DOM Level0
+
+   document.images
+
+   document.links
+
+   document.anchors
+
+   document.forms
+
+   document.cookie
+
+   document.title
+
+   document.referrer  之前所访问过的页面URL
+
+   document.domain    当前所载入页面的域名进行访问
+
+   DOM的事件监听器
+   addEventListeners(事件类型,函数指针，false)
+
+   捕获   document-----------元素
+
+   冒泡   元素-----------document
+
+   eventPhase
