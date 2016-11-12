@@ -120,4 +120,107 @@ function  isNull(input){
    当重写某对象的prototype时，重置相应的congstructor属性是一个好习惯
 
 22 继承
+   .......
+
+
+23 BOM & DOM
+   当前载入页面所拥有的对象也叫文档模型 DOM
+   页面以外事物所拥有的对象也叫浏览器模型 BOM
+   DOM Level1 DOM Level2 DOM Level3
+
+   BOM window
+   window.navigator  window.navigator.userAgent
+   window.location
+   location.href
+   location.hostname
+   location.reload()
+   location.replace()  // 不会再历史记录中不会出现
+   location.assign()
+   windwo.history   // 允许在同一个浏览器会话session中存储有限数量的访问记录
+   windwo.history.length
+   history.back()
+   histroy.forward()
+   history.go()
+
+   window.frames属性是当前页面中所有frame元素的集合,这里对frame和iframe不做区分。
+   无论当前页面中是否存在frame元素，window.frames属性总是存在的，并指向了window对象本身
+
+   frames.length
+
+   每个frame元素都包含一个别的页面，这些页面也都拥有属于自己的全局window布局。
+   如果想访问对应frame对应的页面
+   window.frames[0]
+   window.frames[0].window
+   frames[0].window
+   frames[0]
+
+   通过子元素访问父级页面
+   frame[0].parent === window  // true
+
+   访问到当前最顶层页面
+   window.frames[0].window.top === window
+
+   window.frames[0].window.top === window.top
+
+   window.frames[0].window.top === top
+
+   self与window基本相同
+
+   self === window
+
+   frame[0].window === frame[0].self
+
+   如果frame元素拥有name属性,可以通过name属性来访问frame
+
+   window.frames['myframe'] === window.frame[0]
+
+   window.screen
+   window.screen.colorDepth
+   window.width/window.height
+   window.availWidth/window.availHeight
+
+   height指的是总分辨率
+   availHeight指的是除去操作系统菜单(例如windows的任务栏以外的子区域)
+
+   window.open()
+   url
+   新窗口名字 用于新窗体form标签的属性值
+   功能性列表
+   尺寸
+   弹出窗的长与宽
+   状态栏可见性
+   其他
+
+   window.close()
+
+   window.moveTo()  window.moveBy()
+
+   window.resizeTo()  window.resizeBy()
+
+   window.alert()不是ECMAScript
+
+   window.confirm()
+
+   window.prompt()
+
+   window.setTimeout()
+
+   window.setInterval()
+
+   window.document
+
+   coreHTML与HTMLDOM
+
+   DOM既能解析XML文档，也能解析HTML文档
+
+   DOMlevel1中用于解析所有XML文档的那部分称之为CoreDOM
+   在coreDOM基础上进行扩展的那部分吧称之为HTML DOM
+   HTML DOM并不适用于所有的XML文档，并只适用于HTML文档
+
+   构造器         父级构造器        所属组件           注释说明
+   Node                          coreDOM           树上所有节点都属于Node
+   Doument       Node            coreDOM           Document对象，主要用于表示XML文档项目
+   HTMLDocument  Document        HTMLDOM           window.document对象
+   ELement       Node            coreDOM           每一个标签元素
+   HTMLelement   Element         HTMLDOM           通用性构造器，所有与HTML相关的构造器都继承与该对象
    
