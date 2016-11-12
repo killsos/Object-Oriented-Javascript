@@ -217,10 +217,18 @@ function  isNull(input){
    在coreDOM基础上进行扩展的那部分吧称之为HTML DOM
    HTML DOM并不适用于所有的XML文档，并只适用于HTML文档
 
-   构造器         父级构造器        所属组件           注释说明
-   Node                          coreDOM           树上所有节点都属于Node
-   Doument       Node            coreDOM           Document对象，主要用于表示XML文档项目
-   HTMLDocument  Document        HTMLDOM           window.document对象
-   ELement       Node            coreDOM           每一个标签元素
-   HTMLelement   Element         HTMLDOM           通用性构造器，所有与HTML相关的构造器都继承与该对象
-   
+   构造器            父级构造器        所属组件        注释说明
+   Node                             coreDOM        树上所有节点都属于Node
+   Doument          Node            coreDOM        Document对象，主要用于表示XML文档项目
+   HTMLDocument     Document        HTMLDOM        window.document对象
+   ELement          Node            coreDOM        每一个标签元素
+   HTMLElement      Element         HTMLDOM        通用性构造器，所有与HTML相关的构造器都继承与该对象
+   HTMLBodyElement  HTMLElement     HTMLDOM        body
+   HTMLLinkElement  HTMLElement     HTMLDOM        a
+   .....
+   characterData    Node            coreDOM        文本处理类的通用性构造器
+   Text             characterData   coreDOM        文本
+   Commebt          characterData   coreDOM        注释 <!-- -->
+   Attr             Node            coreDOM        属性
+   nodeList                         coreDOM        节点列表  length
+   NameNodeMap                      coreDOM        getElementbyTagName
