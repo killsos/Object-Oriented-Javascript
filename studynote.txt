@@ -120,7 +120,7 @@ function  isNull(input){
    当重写某对象的prototype时，重置相应的congstructor属性是一个好习惯
 
 22 继承
-   .......
+   
 
 
 23 BOM & DOM
@@ -305,10 +305,38 @@ function  isNull(input){
    document.domain    当前所载入页面的域名进行访问
 
    DOM的事件监听器
-   addEventListeners(事件类型,函数指针，false)
+   addEventListener(事件类型,函数指针，false)
+   removeEventListener()
 
    捕获   document-----------元素
 
    冒泡   元素-----------document
 
    eventPhase
+
+   event.stopPropagation()   // 禁止冒泡
+
+   event.preventDefault()    // 禁止默认事件
+
+   event.cancellable   // 检测事件对象cancellable属性
+
+   事件捕捉方式 setCapture() releaseCapture()
+
+24 编程模式与设计模式
+   自执行函数
+   (function(){})()
+   保证全局命名空间不被污染的模式,把代码封装在一个匿名函数中并立刻自行调用,该函数中的所有变量
+   都是局部的,并在函数返回时被销毁。
+
+   链式调用  返回this  return this;
+
+   设计模式
+
+   单例模式
+
+   工厂模式
+
+   装饰器模式  decorate
+
+   观察者模式
+   订阅者/发行商模式是一种行为型模式
