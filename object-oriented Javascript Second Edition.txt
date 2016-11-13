@@ -107,3 +107,53 @@ var result = ((function(){
   ......
   return value;
 })())
+
+闭包 closures
+ 作用域链
+ es6之前没有块级作用域  只有：函数作用域  全局作用域
+ 函数作用域：在某个函数内定义所有变量在该函数外是不可见的
+
+
+函数对象的属性
+constructor属性其引用就是Function()这个构造器函数
+
+length属性用于记录该函数声明所决定的参数数量
+
+prototype属性
+  1' 每个函数的prototype属性中都指向了一个对象
+  2’ 只有在该函数是构造器时才会发挥作用
+  3' 该函数创建的所有对象都会持有一个该prototype属性的引用，并可以将其当做自身的属性使用
+
+
+call/apply 可以让一个对象去“借用”另一个对象的方法，并为己所用
+如果我们没有将对象传递给call()的首参数，或者传递给它的是null，
+它的调用对象将会被默认为全局对象
+
+实际上就是通过call的首参数修改了对象函数的this值
+
+arguments对象
+Array.prototype.slice.call(arguments)
+[].slice.call(arguments)
+
+推断对象类型
+Object.prototype.toString()
+Object.prototype.toString.call({})
+// "[object Object]"
+
+Object.prototype.toString.call([])
+// "[object Array]"
+
+Object.prototype.toString.call(arguments)
+// "[object Array]"
+
+Object.prototype.toString.call(document.body)
+// "[object HTMLBodyElement]"
+
+
+String对象实际上是一个字符数组，其中包括用于每个字符的索引属性（ES5引入这个特性）
+
+hasOwnProperty()
+
+isPrototypeOf()
+
+Object.getPrototypeOf()
