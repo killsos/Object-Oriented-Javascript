@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  function a(name){
+    this.name = name;
+  }
+
+  function b(name,age){
+    a.call(this,name);
+    this.age = age;
+  }
+
+  var b_obj = new b("kill",12)
+  console.log(b_obj);
+  console.log(b_obj.__proto__);
+  console.log(b_obj.__proto__.constructor);
+  console.log(b_obj.toString());
+  </script>
+</body>
+</html>

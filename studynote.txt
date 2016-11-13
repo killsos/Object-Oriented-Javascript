@@ -120,8 +120,52 @@ function  isNull(input){
    当重写某对象的prototype时，重置相应的congstructor属性是一个好习惯
 
 22 继承
-   
+   JavaScript中的每个函数中都有一名为prototype的对象属性。该函数被new操作符调用时会创建
+   出一个对象，并且该对象会有一个指向其原型对象的秘密链接。通过该秘密链接（__prototype__）
+   我们就可以在新建的对象中调用相关原型对象的方法和属性。
 
+   原型对象自身也具有对象固有的普遍特征，本身包含了指向其原型的链接由此就形成了一条链，称之为
+   原型链
+
+   原型链是ECMAScript标准指定的默认继承方式
+
+   将共享属性迁移到原型中去
+
+   只继承于原型
+   不要单独为继承关系创建新对象
+   尽量减少运行时方法搜索
+
+   function person(name){
+    this.name = name;
+   }
+
+   function coder(name,age){
+    A.call(this,name);
+    this.age = age;
+   }
+
+   coder.prototype = new person();
+
+   coder.prototype.constructor = coder;
+
+   function person(name){
+    this.name = name;
+   }
+
+   function coder(name,age){
+    A.call(this,name);
+    this.age = age;
+   }
+
+   coder.prototype = person.prototype;
+
+   coder.prototype.constructor = coder;
+
+   对象类型通常都是以引用形式来进行拷贝，这有时会导致一些不可预测的结果
+
+   混合插入mixins
+
+   寄生式继承 parasite parasitic
 
 23 BOM & DOM
    当前载入页面所拥有的对象也叫文档模型 DOM
