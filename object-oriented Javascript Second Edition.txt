@@ -1,0 +1,51 @@
+object-oriented Javascript Second Edition
+
+前端
+ECMAScript javascript
+文档对象模型 DOM
+浏览器对象模型  BOM
+
+ECMAScript5 2009
+
+ECMAScript6 2015
+
+ECMAScript7 2016
+
+类
+  封装
+  聚合  组合  将几个现有对象合并成一个新对象的过程
+  继承
+  多态
+
+函数
+所谓函数本质是一种代码的分组形式，一个对象并且有被调用。
+关键词     function
+函数名称
+函数参数
+函数体
+return 子句,如果没有默认undefined
+
+对于调用call 也可以将其称之为请求 invoke
+
+参数
+arguments 内建变量 实参
+函数名.length 形参的个数
+
+变量的作用域
+全局变量   局部变量(函数变量)
+
+
+变量提升 hoisting
+当javascript执行过程进入新的函数时,这个函数内被声明的所有变量都会移动到函数最开始的地方
+另外需要注意的是，被提升的只有变量的声明
+只有函数体内声明的这些变量在该函数执行开始的就存在,而与之相关的赋值操作并不会被提升，还在其原来
+的位置上
+
+局部变量本身被提升到了函数最开始处
+
+
+函数也是数据
+
+可以把一个函数赋值给一个变量  这种定义方式叫函数标识记法  function literal notation
+
+function(){return 1;}
